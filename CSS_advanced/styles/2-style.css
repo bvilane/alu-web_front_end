@@ -1,0 +1,14 @@
+/* body and the links foreground color: #161616
+   specified the class names foreground color: #D73953
+*/
+html {
+    scroll-behavior: smooth;
+}
+
+body, a {
+    color: #161616;
+}
+
+.card-category, .section-tagline {
+    color: #D73953;
+}
