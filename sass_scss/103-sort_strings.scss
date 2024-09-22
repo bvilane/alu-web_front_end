@@ -1,6 +1,4 @@
 /* Sass file that sorts the variable $list_to_sort and prints the sorted list in the debug output*/
-$list_to_sort: john anna bob colin ludo patrick sylvain;
-
 @function sort($list) {
   $sorted_list: ();
   @while length($list) > 0 {
