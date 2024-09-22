@@ -1,0 +1,33 @@
+/* Sass file that sorts the variable $list_to_sort and prints the sorted list in the debug output*/
+$list_to_sort: john anna zoe kim felicia carrie;
+
+@function sort($list) {
+  $sorted_list: ();
+  @while length($list) > 0 {
+    $min: nth($list, 1);
+    $min_index: 1;
+    @for $i from 1 through length($list) {
+      $item: nth($list, $i);
+      @if $item < $min {
+        $min: $item;
+        $min_index: $i;
+      }
+    }
+    $sorted_list: append($sorted_list, $min);
+    $list: list-remove($list, $min_index);
+  }
+  @return $sorted_list;
+}
+
+@function list-remove($list, $index) {
+  $result: ();
+  @for $i from 1 through length($list) {
+    @if $i != $index {
+      $result: append($result, nth($list, $i));
+    }
+  }
+  @return $result;
+}
+
+$sorted_list: sort($list_to_sort);
+@debug $sorted_list;
